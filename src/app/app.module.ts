@@ -15,7 +15,7 @@ import {BaseModule} from './ui/base/base.module';
     BaseModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
