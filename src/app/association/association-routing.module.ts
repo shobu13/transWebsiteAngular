@@ -4,7 +4,7 @@ import {AssociationModule} from './association.module';
 import {HomeComponent} from './pages/home/home.component';
 
 const ASSOCIATION_ROUTES: Routes = [
-  {path: '', component: HomeComponent}
+  {path: ':id', component: HomeComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

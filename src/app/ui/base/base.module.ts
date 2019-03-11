@@ -5,6 +5,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {MastheadComponent} from './masthead/masthead.component';
+import {AssociationService} from '../../association/shared/association.service';
 
 @NgModule({
   declarations: [RendererComponent, NavbarComponent, FooterComponent, MastheadComponent],
@@ -13,7 +14,7 @@ import {MastheadComponent} from './masthead/masthead.component';
     CommonModule,
     RouterModule,
   ],
-  providers: []
+  providers: [AssociationService]
 })
 export class BaseModule {
 }
