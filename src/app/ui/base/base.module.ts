@@ -14,7 +14,9 @@ import {AssociationService} from '../../association/shared/association.service';
     CommonModule,
     RouterModule,
   ],
-  providers: [AssociationService]
+  providers: [
+    AssociationService,
+  ]
 })
 export class BaseModule {
 }

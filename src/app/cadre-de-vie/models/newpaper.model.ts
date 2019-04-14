@@ -1,5 +1,5 @@
 import {UploadedImagesModel} from '../../core/models/uploaded-images.model';
-import {UserModel} from '../../core/models/user.model';
+import {AssociationModel} from '../../association/models/association.model';
 
 export class NewpaperModel {
   private _id: number;
@@ -9,7 +9,7 @@ export class NewpaperModel {
   private _texte: string;
   private _date: Date;
   private _estMairie: boolean;
-  private _owner: UserModel;
+  private _owner: AssociationModel;
 
   get id(): number {
     return this._id;
@@ -67,11 +67,11 @@ export class NewpaperModel {
     this._estMairie = value;
   }
 
-  get owner(): UserModel {
+  get owner(): AssociationModel {
     return this._owner;
   }
 
-  set owner(value: UserModel) {
+  set owner(value: AssociationModel) {
     this._owner = value;
   }
 

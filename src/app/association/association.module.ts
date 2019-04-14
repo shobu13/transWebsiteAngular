@@ -7,6 +7,11 @@ import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import {MarkdownModule} from 'ngx-markdown';
 import {NewsRendererComponent} from './components/news-renderer/news-renderer.component';
 import {PagerService} from '../core/shared/pager.service';
+import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NewpaperService} from '../cadre-de-vie/shared/newpaper.service';
+import {CoreModule} from '../core/core.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [HomeComponent, NewsRendererComponent],
@@ -14,9 +19,17 @@ import {PagerService} from '../core/shared/pager.service';
     CommonModule,
     ScrollToModule,
     MarkdownModule.forChild(),
-    BaseModule
+    BaseModule,
+    NgbDatepickerModule,
+    ReactiveFormsModule,
+    CoreModule,
+    RouterModule
   ],
-  providers: [AssociationService, PagerService]
+  providers: [
+    AssociationService,
+    NewpaperService,
+    PagerService,
+  ]
 })
 export class AssociationModule {
 }

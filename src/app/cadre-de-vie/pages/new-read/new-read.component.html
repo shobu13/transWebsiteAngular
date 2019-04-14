@@ -1,0 +1,18 @@
+<!-- Page Content -->
+<div class="container" *ngIf="newpaper">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+      <h1 class="font-weight-light">{{newpaper.titre}}</h1>
+      <hr/>
+      <p class="lead" markdown>{{newpaper.texte}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      <a [routerLink]="['/association', newpaper.owner.id]" *ngIf="!newpaper.estMairie">
+        <button class="btn btn-primary">Retour</button>
+      </a>
+      <!--<a [routerLink]="['/association', newpaper.owner.id]" *ngIf="newpaper.estMairie">
+        <button class="btn btn-primary">Retour</button>-->
+      </a>
+    </div>
+  </div>
+</div>

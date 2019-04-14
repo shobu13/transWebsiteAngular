@@ -1,6 +1,7 @@
-
 <app-navbar></app-navbar>
-<body id="page-top">
-<router-outlet></router-outlet>
+<!--  <div id="page-top" [@routerTransition]="outlet.isActivated ? outlet.activatedRoute : ''">-->
+<div id="content">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
+<!--  </div>-->
 <app-footer></app-footer>
-</body>

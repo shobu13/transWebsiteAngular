@@ -10,9 +10,9 @@ import {AssociationModel} from '../../../association/models/association.model';
 })
 export class NavbarComponent implements OnInit {
 
-  private associations: AssociationModel[];
+  public associations: AssociationModel[];
 
-  constructor(private router: Router, private associationService: AssociationService) {
+  constructor(public router: Router, private associationService: AssociationService) {
     this.associations = [];
   }
 
