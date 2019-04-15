@@ -1,0 +1,26 @@
+<div id="newpaperContent" style="height: 100%">
+  <!-- Page Content -->
+  <div class="container" *ngIf="commission">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+        <h1 class="font-weight-light">{{commission.titre}}</h1>
+        <hr/>
+        <h3>Titulaires</h3>
+        <ul>
+          <li *ngFor="let titulaire of commission.titulaires">
+            {{titulaire.first_name}} {{titulaire.last_name}}
+          </li>
+        </ul>
+        <hr/>
+        <h3>Suppléants</h3>
+        <ul>
+          <li *ngFor="let suppleant of commission.suppleants">
+            {{suppleant.first_name}} {{suppleant.last_name}}
+          </li>
+        </ul>
+        <hr/>
+        <p class="lead" markdown>{{commission.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

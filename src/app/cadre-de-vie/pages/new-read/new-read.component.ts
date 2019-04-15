@@ -21,7 +21,7 @@ export class NewReadComponent implements OnInit {
     this.newpaperService.retrieve(newId).subscribe(
       (data: NewpaperModel) => {
         this.newpaper = new NewpaperModel(data);
-        const body = document.getElementsByTagName('body').item(0);
+        const body = document.getElementById('newpaperContent');
         body.style.background = `url(${data.owner.cover}) no-repeat center`;
         body.style.backgroundSize = 'cover';
       },

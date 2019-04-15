@@ -37,7 +37,9 @@ export class NewsRendererComponent implements OnInit {
   }
 
   onDateChange() {
-
+    const fromDate = new Date(+this.yearInput.value, +this.monthInput.value, 1);
+    const toDate = new Date(+this.yearInput.value, +this.monthInput.value + 1, 0);
+    this.dateChange.emit({fromDate, toDate});
   }
 
 

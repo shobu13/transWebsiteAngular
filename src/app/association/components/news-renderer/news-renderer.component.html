@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center text-center form-group">
     <div class="col-4">
-      <select class="form-control" [formControl]="monthInput">
+      <select class="form-control" [formControl]="monthInput" (change)="onDateChange()">
         <option value="0">Janvier</option>
         <option value="1">Février</option>
         <option value="2">Mars</option>
@@ -19,7 +19,7 @@
     <div class="col-4">
       <label>
         <input type="number" class="form-control"
-               [formControl]="yearInput"/>
+               [formControl]="yearInput" (change)="onDateChange()"/>
       </label>
     </div>
   </div>

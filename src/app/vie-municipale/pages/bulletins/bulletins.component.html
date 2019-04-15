@@ -1,0 +1,55 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+      <div class="row justify-content-center text-center form-group">
+        <div class="col-4">
+          <select class="form-control" [formControl]="monthInput" (change)="onDateChange()">
+            <option value="0">Janvier</option>
+            <option value="1">Février</option>
+            <option value="2">Mars</option>
+            <option value="3">Avril</option>
+            <option value="4">Mai</option>
+            <option value="5">Juin</option>
+            <option value="6">Juillet</option>
+            <option value="7">Août</option>
+            <option value="8">Septembre</option>
+            <option value="9">Octobre</option>
+            <option value="10">Novembre</option>
+            <option value="11">Décembre</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <label>
+            <input type="number" class="form-control"
+                   [formControl]="yearInput" (change)="onDateChange()"/>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody *ngIf="bulletinListe">
+            <tr *ngFor="let bulletin of bulletinListe">
+              <td>{{bulletin.date | date}}</td>
+              <td><a href="{{bulletin.pdf}}" target="_blank">
+                <button class="btn btn-primary btn-block">Télécharger</button>
+              </a></td>
+            </tr>
+            </tbody>
+            <tbody *ngIf="bulletinListe.length === 0">
+            <td colspan="2">Pas de Bulletin pour cette période</td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

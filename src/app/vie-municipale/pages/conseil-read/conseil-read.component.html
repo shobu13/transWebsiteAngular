@@ -1,0 +1,12 @@
+<div id="newpaperContent" style="height: 100%">
+  <!-- Page Content -->
+  <div class="container" *ngIf="conseil">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+        <h1 class="font-weight-light">{{conseil.titre}}</h1>
+        <hr/>
+        <p class="lead" markdown>{{conseil.texte}}</p>
+      </div>
+    </div>
+  </div>
+</div>

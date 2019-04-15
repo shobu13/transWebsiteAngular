@@ -10,8 +10,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto my-2 my-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/association">Vie Municipale</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="vieMunicipaleDropdown" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">Vie Municipale</a>
+          <div class="dropdown-menu" aria-labelledby="vieMunicipaleDropdown">
+            <a class="dropdown-item" routerLink="vie-municipale/elus">Elus</a>
+            <a class="dropdown-item" routerLink="vie-municipale/bulletins">Bulletins</a>
+            <a class="dropdown-item" routerLink="vie-municipale/commission">Commissions</a>
+            <a class="dropdown-item" routerLink="vie-municipale/conseil">Conseils</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/">Services</a>
@@ -20,11 +27,11 @@
           <a class="nav-link" routerLink="/">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="#" id="assocDropdown" role="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
             Associations
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="assocDropdown">
             <a class="dropdown-item" routerLink="association/{{association.id}}"
                *ngFor="let association of associations">{{association.nom}}</a>
           </div>

@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
         for (const assoc of data) {
           this.associations.push(new AssociationModel(assoc));
         }
-        console.log(this.associations);
       },
       error1 => {
         console.log(error1);

@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit {
         }).filter((e) => {
           return e;
         });
-        console.log(this.news);
       },
       error1 => {
         console.log(error1);
@@ -60,7 +59,6 @@ export class HomeComponent implements OnInit {
     this.associationService.retrieve(id).subscribe(
       (data: AssociationModel) => {
         this.association = new AssociationModel(data);
-        console.log(this.association);
       },
       error1 => {
         console.log(error1);

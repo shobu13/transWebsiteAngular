@@ -1,0 +1,66 @@
+<div id="newpaperContent" style="height: 100%">
+  <!-- Page Content -->
+  <div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+
+        <div class="row" *ngIf="maire">
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+              <img src="{{maire.elu_picture.picture}}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{maire.first_name}} {{maire.last_name}}</h5>
+                <div class="card-text text-black-50">Maire</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 mb-4" *ngIf="adjoint1">
+            <div class="card border-0 shadow">
+              <img src="{{adjoint1.elu_picture.picture}}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{adjoint1.first_name}} {{adjoint1.last_name}}</h5>
+                <div class="card-text text-black-50">Premier adjoint</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4" *ngIf="adjoint2">
+            <div class="card border-0 shadow">
+              <img src="{{adjoint2.elu_picture.picture}}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{adjoint2.first_name}} {{adjoint2.last_name}}</h5>
+                <div class="card-text text-black-50">Second adjoint</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4" *ngIf="adjoint3">
+            <div class="card border-0 shadow">
+              <img src="{{adjoint3.elu_picture.picture}}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{adjoint3.first_name}} {{adjoint3.last_name}}</h5>
+                <div class="card-text text-black-50">Troisième adjoint</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="conseillersListe">
+          <div class="col-xl-3 col-md-6 mb-4" *ngFor="let elu of conseillersListe">
+            <div class="card border-0 shadow">
+              <img src="{{elu.elu_picture.picture}}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">{{elu.first_name}} {{elu.last_name}}</h5>
+                <div class="card-text text-black-50">Conseiller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
