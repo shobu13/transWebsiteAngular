@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {API_URL} from '../assets/conf';
 
 const APP_ROUTES: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},

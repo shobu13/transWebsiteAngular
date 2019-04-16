@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "@nicky-lenaers/ngx-scroll-to": "^2.0.0",
+    "@types/googlemaps": "^3.30.19",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "jquery": "^3.4.0",

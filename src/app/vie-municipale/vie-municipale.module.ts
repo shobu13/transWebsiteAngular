@@ -11,7 +11,7 @@ import {CommissionService} from './shared/commission.service';
 import {ConseilService} from './shared/conseil.service';
 import {RouterModule} from '@angular/router';
 import {MarkdownModule} from 'ngx-markdown';
-import { ElusComponent } from './pages/elus/elus.component';
+import {ElusComponent} from './pages/elus/elus.component';
 
 @NgModule({
   declarations: [BulletinsComponent, CommissionHomeComponent, CommissionReadComponent, ConseilHomeComponent, ConseilReadComponent, ElusComponent],

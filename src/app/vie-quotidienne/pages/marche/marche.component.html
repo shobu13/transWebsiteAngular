@@ -1,0 +1,29 @@
+<!-- Page Content -->
+<div class="container pt-5">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body">
+      <div *ngFor="let marche of marcheListe">
+        <h1 class="font-weight-light">{{marche.adresse}}</h1>
+        <table class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th scope="col" *ngFor="let horaire of marche.horaires">{{horaire.jour}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td *ngFor="let horaire of marche.horaires">
+              <ul>
+                <li>{{horaire.debut}}</li>
+                <li>{{horaire.fin}}</li>
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary" (click)="setDirections(marche.id)">Y aller</button>
+        <hr/>
+      </div>
+      <div #gmap style="width:100%;height:400px" id="marche"></div>
+    </div>
+  </div>
