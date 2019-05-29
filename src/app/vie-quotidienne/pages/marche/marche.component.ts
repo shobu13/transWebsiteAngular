@@ -81,7 +81,7 @@ export class MarcheComponent implements OnInit {
             destination: markerPos,
             travelMode: google.maps.TravelMode.DRIVING
           }, (result, status1) => {
-            if (status1 === 'OK') {
+            if (status1 === google.maps.DirectionsStatus.OK) {
               directionDisplay.setDirections(result);
             } else {
               console.log(result);

@@ -1,0 +1,24 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+
+      <div *ngFor="let commerce of commerceListe">
+        <div class="row">
+          <div class="col-md-7">
+            <a href="#">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="{{commerce.header}}" alt="">
+            </a>
+          </div>
+          <div class="col-md-5">
+            <h3>{{commerce.nom}}</h3>
+            <p>{{commerce.resume}}</p>
+            <a class="btn btn-primary" [routerLink]="['/vie-quotidienne/commerce', commerce.id]">En savoir plus</a>
+          </div>
+        </div>
+        <hr/>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -3,7 +3,6 @@ import {AssociationModel} from '../../association/models/association.model';
 
 export class NewpaperModel {
   private _id: number;
-  private _images: UploadedImagesModel[];
   private _contentType: number;
   private _titre: string;
   private _texte: string;
@@ -17,14 +16,6 @@ export class NewpaperModel {
 
   set id(value: number) {
     this._id = value;
-  }
-
-  get images(): UploadedImagesModel[] {
-    return this._images;
-  }
-
-  set images(value: UploadedImagesModel[]) {
-    this._images = value;
   }
 
   get contentType(): number {

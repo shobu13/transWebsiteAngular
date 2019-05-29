@@ -1,10 +1,9 @@
-import {UploadedImagesModel} from '../../core/models/uploaded-images.model';
-
-export class SalleDeFeteModel {
+export class CimetiereModel {
   private _id: number;
   private _content_type: number;
   private _nom: string;
   private _adresse: string;
+  private _code_postal: string;
   private _description: string;
 
   get id(): number {
@@ -37,6 +36,14 @@ export class SalleDeFeteModel {
 
   set adresse(value: string) {
     this._adresse = value;
+  }
+
+  get code_postal(): string {
+    return this._code_postal;
+  }
+
+  set code_postal(value: string) {
+    this._code_postal = value;
   }
 
   get description(): string {

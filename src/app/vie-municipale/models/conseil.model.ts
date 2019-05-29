@@ -2,7 +2,6 @@ import {UploadedImagesModel} from '../../core/models/uploaded-images.model';
 
 export class ConseilModel {
   private _id: number;
-  private _images: UploadedImagesModel[];
   private _content_type: number;
   private _titre: string;
   private _texte: string;
@@ -14,14 +13,6 @@ export class ConseilModel {
 
   set id(value: number) {
     this._id = value;
-  }
-
-  get images(): UploadedImagesModel[] {
-    return this._images;
-  }
-
-  set images(value: UploadedImagesModel[]) {
-    this._images = value;
   }
 
   get content_type(): number {

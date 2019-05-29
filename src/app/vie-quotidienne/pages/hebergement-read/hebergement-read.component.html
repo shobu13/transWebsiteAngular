@@ -1,0 +1,11 @@
+<div id="hebergementContent">
+  <!-- Page Content -->
+  <div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5" *ngIf="hebergement">
+        <h1 class="font-weight-light">{{hebergement.nom}}</h1>
+        <p class="lead" markdown>{{hebergement.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

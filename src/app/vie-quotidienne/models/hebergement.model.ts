@@ -1,11 +1,15 @@
-import {UploadedImagesModel} from '../../core/models/uploaded-images.model';
+import {UserModel} from '../../core/models/user.model';
 
-export class SalleDeFeteModel {
+export class HebergementModel {
   private _id: number;
   private _content_type: number;
   private _nom: string;
   private _adresse: string;
   private _description: string;
+  private _resume: string;
+  private _header: string;
+  private _type: { id: number, libelle: string };
+  private _owner?: UserModel;
 
   get id(): number {
     return this._id;
@@ -45,6 +49,38 @@ export class SalleDeFeteModel {
 
   set description(value: string) {
     this._description = value;
+  }
+
+  get resume(): string {
+    return this._resume;
+  }
+
+  set resume(value: string) {
+    this._resume = value;
+  }
+
+  get header(): string {
+    return this._header;
+  }
+
+  set header(value: string) {
+    this._header = value;
+  }
+
+  get type(): { id: number; libelle: string } {
+    return this._type;
+  }
+
+  set type(value: { id: number; libelle: string }) {
+    this._type = value;
+  }
+
+  get owner(): UserModel {
+    return this._owner;
+  }
+
+  set owner(value: UserModel) {
+    this._owner = value;
   }
 
   constructor(input: any) {

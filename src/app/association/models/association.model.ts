@@ -3,7 +3,6 @@ import {UserModel} from '../../core/models/user.model';
 
 export class AssociationModel {
   private _id: number;
-  private _images: UploadedImagesModel[];
   private _contentType: number;
   private _nom: string;
   private _description: string;
@@ -18,14 +17,6 @@ export class AssociationModel {
 
   set id(value: number) {
     this._id = value;
-  }
-
-  get images(): UploadedImagesModel[] {
-    return this._images;
-  }
-
-  set images(value: UploadedImagesModel[]) {
-    this._images = value;
   }
 
   get contentType(): number {

@@ -3,10 +3,8 @@ import {UserModel} from '../../core/models/user.model';
 
 export class CommissionModel {
   private _id: number;
-  private _images: UploadedImagesModel[];
   private _content_type: number;
   private _titre: string;
-  private _date: Date;
   private _description: string;
   private _titulaires: UserModel[];
   private _suppleants: UserModel[];
@@ -17,14 +15,6 @@ export class CommissionModel {
 
   set id(value: number) {
     this._id = value;
-  }
-
-  get images(): UploadedImagesModel[] {
-    return this._images;
-  }
-
-  set images(value: UploadedImagesModel[]) {
-    this._images = value;
   }
 
   get content_type(): number {
@@ -41,14 +31,6 @@ export class CommissionModel {
 
   set titre(value: string) {
     this._titre = value;
-  }
-
-  get date(): Date {
-    return this._date;
-  }
-
-  set date(value: Date) {
-    this._date = value;
   }
 
   get description(): string {
