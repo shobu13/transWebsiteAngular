@@ -8,8 +8,8 @@ export class MarcheModel {
   private _horaires: {
     id: number;
     jour: string;
-    debut: Time;
-    fin: Time;
+    debut: Date;
+    fin: Date;
   }[];
 
 
@@ -37,15 +37,16 @@ export class MarcheModel {
     this._code_postal = value;
   }
 
-  get horaires(): { id: number; jour: string; debut: Time; fin: Time }[] {
+  get horaires(): { id: number; jour: string; debut: Date; fin: Date }[] {
     return this._horaires;
   }
 
-  set horaires(value: { id: number; jour: string; debut: Time; fin: Time }[]) {
+  set horaires(value: { id: number; jour: string; debut: Date; fin: Date }[]) {
     this._horaires = value;
   }
 
   constructor(input: any) {
     Object.assign(this, input);
+    console.log(this);
   }
 }

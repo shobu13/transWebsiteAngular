@@ -1,0 +1,16 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body pt-5 mx-auto">
+      <div class="card mb-5" *ngFor="let patrimoine of patrimoineList">
+        <img src="{{patrimoine.patrimoine_image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{patrimoine.nom}}</h5>
+          <p class="card-text text-muted">{{patrimoine.adresse}}
+          <p>
+            <a [routerLink]="['/cadre-de-vie/patrimoine', patrimoine.id]" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

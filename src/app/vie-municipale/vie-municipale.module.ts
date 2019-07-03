@@ -20,6 +20,7 @@ import {ElusComponent} from './pages/elus/elus.component';
     ReactiveFormsModule,
     RouterModule,
     MarkdownModule,
+
   ],
   providers: [
     BulletinService,

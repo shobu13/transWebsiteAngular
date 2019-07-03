@@ -1,0 +1,9 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body pt-5">
+      <app-event-calendar [events]="events" *ngIf="events" (eventClicked)="onEventClicked($event)"
+                          (timeChange)="onTimeChange($event)"></app-event-calendar>
+    </div>
+  </div>
+</div>

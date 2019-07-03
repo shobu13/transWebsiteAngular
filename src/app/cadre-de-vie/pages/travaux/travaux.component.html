@@ -1,0 +1,21 @@
+<!-- Page Content -->
+<!-- Page Content -->
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+      <div *ngFor="let type of types">
+        <h1 class="mt-5">{{type}}</h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let travail of travaux[type]">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">nom : {{travail.nom}}</li>
+              <li class="list-group-item text-muted">début : {{travail.debut | date: 'MMM d y à H:mm'}}</li>
+              <li class="list-group-item text-muted">fin : {{travail.fin | date: 'MMM d y à H:mm'}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

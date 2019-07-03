@@ -5,6 +5,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NewpaperModel} from '../../../cadre-de-vie/models/newpaper.model';
 import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import {NewpaperService} from '../../../cadre-de-vie/shared/newpaper.service';
+import {EventService} from '../../../cadre-de-vie/shared/event.service';
+import {EventModel} from '../../../cadre-de-vie/models/event.model';
+import {CalendarEvent} from 'angular-calendar';
+import {startOfMonth, endOfMonth} from 'date-fns';
 
 
 @Component({
@@ -15,9 +19,11 @@ import {NewpaperService} from '../../../cadre-de-vie/shared/newpaper.service';
 export class HomeComponent implements OnInit {
 
   public association?: AssociationModel;
-  private news?: NewpaperModel[][];
+  news?: NewpaperModel[][];
+  events?: EventModel[];
 
-  constructor(private associationService: AssociationService, private route: ActivatedRoute, private router: Router, private newpaperService: NewpaperService) {
+  constructor(private associationService: AssociationService, private route: ActivatedRoute, private router: Router,
+              private newpaperService: NewpaperService, private eventService: EventService) {
     this.route.params.subscribe(
       () => {
         this.updateAssociation(this.route.snapshot.params.id);
@@ -52,6 +58,7 @@ export class HomeComponent implements OnInit {
         console.log(error1);
       }
     );
+
   }
 
   updateAssociation(id: number) {
@@ -64,6 +71,26 @@ export class HomeComponent implements OnInit {
         console.log(error1);
       }
     );
+    this.updateEvent();
   }
 
+  onEventClicked(eventId: number) {
+    this.router.navigate(['/cadre-de-vie/event/', eventId]);
+  }
+
+  onTimeChange(time: Date) {
+    this.updateEvent(startOfMonth(time), endOfMonth(time));
+  }
+
+  updateEvent(debut = startOfMonth(Date.now()), fin = endOfMonth(Date.now())) {
+    this.eventService.list(false, this.route.snapshot.params.id, debut, fin).subscribe(
+      (eventData: []) => {
+        this.events = [];
+        for (const event of eventData) {
+          this.events.push(new EventModel(event));
+        }
+      },
+      error1 => console.log(error1)
+    );
+  }
 }

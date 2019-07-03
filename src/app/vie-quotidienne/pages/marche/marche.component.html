@@ -14,8 +14,8 @@
           <tr>
             <td *ngFor="let horaire of marche.horaires">
               <ul>
-                <li>{{horaire.debut}}</li>
-                <li>{{horaire.fin}}</li>
+                <li>{{horaire.debut | slice: 0: 5}}</li>
+                <li>{{horaire.fin | slice: 0: 5}}</li>
               </ul>
             </td>
           </tr>

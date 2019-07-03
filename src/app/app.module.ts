@@ -53,7 +53,7 @@ export function markedOptionsFactory(): MarkedOptions {
       }
     }),
     NgbModule,
-    BaseModule
+    BaseModule,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr'},

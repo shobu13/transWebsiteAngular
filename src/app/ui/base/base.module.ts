@@ -6,17 +6,25 @@ import {FooterComponent} from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {MastheadComponent} from './masthead/masthead.component';
 import {AssociationService} from '../../association/shared/association.service';
+import {EventCalendarComponent} from './event-calendar/event-calendar.component';
+import {CalendarModule, DateAdapter} from 'angular-calendar';
+import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
-  declarations: [RendererComponent, NavbarComponent, FooterComponent, MastheadComponent],
-  exports: [RendererComponent, NavbarComponent, FooterComponent, MastheadComponent],
+  declarations: [RendererComponent, NavbarComponent, FooterComponent, MastheadComponent, EventCalendarComponent],
+  exports: [RendererComponent, NavbarComponent, FooterComponent, MastheadComponent, EventCalendarComponent],
   imports: [
     CommonModule,
     RouterModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
   ],
   providers: [
     AssociationService,
   ]
 })
 export class BaseModule {
+
 }
